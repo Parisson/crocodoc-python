@@ -16,10 +16,10 @@ def upload(url=None, file=None):
     
     crocodoc.check_response(r)
     
-    if "uuid" not in r.json():
+    if "uuid" not in r.json:
         raise crocodoc.CrocodocError("missing_uuid", r)
 
-    return r.json()["uuid"]
+    return r.json["uuid"]
 
 
 def status(uuids):
@@ -33,7 +33,7 @@ def status(uuids):
     
     crocodoc.check_response(r)
     
-    return r.json()[0] if single_uuid else r.json()
+    return r.json[0] if single_uuid else r.json
 
 
 def delete(uuid):
